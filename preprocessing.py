@@ -33,8 +33,8 @@ def training_data(tokens,token_map,window):
                 y.append(one_hot_encode(token_map[tokens[j]],len(token_map)))
     return x,y
 
-
-tokens = tokenize("I have the world's ugliest dog and I've lost it ''3'3'3224; 123Hurrah")
+text = "English is a West Germanic language that emerged in early medieval England and has since become a global lingua franca.[4][5][6] The namesake of the language is the Angles, one of the Germanic peoples who migrated to Britain after the end of Roman rule. English is the most spoken language in the world, primarily due to the global influences of the former British Empire (succeeded by the Commonwealth of Nations) and the United States. It is the most widely learned second language in the world, with more second-language speakers than native speakers. However, English is only the third-most spoken native language, after Mandarin Chinese and Spanish.[3]"
+tokens = tokenize(text)
 id_map,token_map = map_token(tokens)
 x,y = training_data(tokens,token_map,2)
 x = np.array(x)
