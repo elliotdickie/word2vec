@@ -32,7 +32,7 @@ plt.plot(range(len(history)), history)
 plt.show()
 
 #check word predictions
-learning = pp.one_hot_encode(token_map["the"],len(id_map))
+learning = pp.one_hot_encode(token_map["trees"],len(id_map))
 result = train.forward(network,[learning])["Z"][0]
 
 for word in (id_map[id] for id in np.argsort(result)[::-1]):
